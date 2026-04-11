@@ -1,10 +1,20 @@
 from vector_store import model, index, stored_data
 import numpy as np
 
+# 🔥 NEW IMPORTS
+from news_fetcher import get_stock_news
+from vector_store import add_news   # make sure you added this earlier
+
 def retrieve(query):
     print("Index size:", index.ntotal)
     print("Stored data size:", len(stored_data))
-    
+
+    # 🔥 STEP 1: Fetch & add news
+    news_list = get_stock_news(query)
+    add_news(news_list, query)
+
+    # (rest stays SAME ↓)
+
     if index.ntotal == 0:
         return stored_data[:3]
 

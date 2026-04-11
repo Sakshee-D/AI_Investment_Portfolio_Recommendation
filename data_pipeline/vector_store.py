@@ -53,7 +53,21 @@ def add_to_index(data):
         "summary": summary
     })
 
+def add_news(news_list, query):
+    global stored_data
 
+    for n in news_list:
+        summary = f"News about {query}: {n}"
+
+        embedding = model.encode([summary])
+        index.add(np.array(embedding))
+
+        stored_data.append({
+            "type": "news",
+            "stock": query,
+            "summary": summary
+        })
+        
 # -------- BUILD INDEX --------
 if index.ntotal == 0:
     data_list = get_stock_data()
