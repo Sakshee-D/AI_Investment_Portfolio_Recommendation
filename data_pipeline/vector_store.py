@@ -11,12 +11,10 @@ stored_data = []
 def add_to_index(data):
     global stored_data
 
-    # -------- SAFE DEFAULTS --------
+    #SAFE DEFAULTS
     for key in ["marketCap", "pe", "revenueGrowth", "debtToEquity", "dividendYield", "beta"]:
         if data.get(key) is None:
             data[key] = 0
-
-    # -------- IMPROVED LOGIC --------
 
     # Size
     size = "large cap" if data["marketCap"] > 500000000000 else "mid/small cap"
@@ -41,10 +39,10 @@ def add_to_index(data):
     # Dividend
     dividend = "good dividend" if data["dividendYield"] > 0.02 else "low dividend"
 
-    # -------- FINAL SUMMARY --------
+    # FINAL SUMMARY
     summary = f"{data['stock']} is a {size} stock in {data['sector']} sector. It is {valuation} with PE {data['pe']}. The company shows {growth} and has {risk}. It offers {dividend}. Suitable for {'long term investment' if size == 'large cap' else 'short to medium term investment'}."
 
-    # -------- USE SUMMARY --------
+    # USE SUMMARY
     embedding = model.encode([summary])
     index.add(np.array(embedding))
 
@@ -68,7 +66,7 @@ def add_news(news_list, query):
             "summary": summary
         })
         
-# -------- BUILD INDEX --------
+# BUILD INDEX 
 if index.ntotal == 0:
     data_list = get_stock_data()
     for item in data_list:
