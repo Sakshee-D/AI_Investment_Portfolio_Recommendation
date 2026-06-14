@@ -13,10 +13,7 @@ It returns a suggested portfolio with allocation.
 
 This project is for:
 
-- Students learning backend development  
-- Beginners exploring AI + APIs  
-- Anyone trying to understand RAG systems in a simple way  
-
+- The Stock Recommendation System is for people who want to understand a stock before investing, especially beginners and students who may find financial information difficult to analyze.
 
 ---
 
