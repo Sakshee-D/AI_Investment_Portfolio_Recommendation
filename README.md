@@ -7,9 +7,6 @@ This is a basic stock recommendation system built using FastAPI, FAISS, and Gemi
 It takes user input like risk level, investment duration, and budget.  
 It returns a suggested portfolio with allocation.
 
-This is not a production system.  
-It is a learning project to understand how RAG (Retrieval-Augmented Generation) works.
-
 ---
 
 ## Who is this for
@@ -114,14 +111,13 @@ Then sees recommended portfolio.
 
 ---
 
-## Limitations (Honest)
+## Limitations 
 
 - Tickers are hardcoded  
 - Data is not real-time  
 - No proper financial modeling  
 - No risk calculation engine  
 - LLM output may not always be structured  
-- Not suitable for real investment decisions  
 
 ---
 
@@ -145,7 +141,7 @@ Then sees recommended portfolio.
 
 ---
 
-## Run Instructions
+
 
 ### Backend
 
